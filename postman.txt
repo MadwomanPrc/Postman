@@ -1,0 +1,68 @@
+var resp = pm.response.json();
+var req = request.data;
+var req_get = pm.reqwest.url.query.toObject()
+
+
+
+
+
+Для Post и других, где нет передачи параметров в url (спарсить реквест):
+var req = request.data;
+Спарсить респонс:
+var resp = pm.response.json();
+
+
+
+Для Get (спарсить реквест в url):
+var req_get = pm.request.url.query.toObject()
+
+
+
+Для Post и других, где нет передачи параметров в url (спарсить реквест):
+var req = request.data;
+[13:50]
+Спарсить респонс:
+var resp = pm.response.json();
+
+
+// Cпарсить респонс и реквест:
+var resp = pm.response.json();
+var req = request.data;
+// Проверка Имени:
+pm.test("CheckName", function () {
+  pm.expect(resp.name).to.eql(req.name)
+})
+
+
+
+
+
+
+
+//Спарсить респонс и реквест:
+var resp = pm.response.json();
+var req = JSON.parse(request.data);
+//Проверка статус кода:
+pm.test("Status code is 201", function () {
+    pm.response.to.have.status(201);
+});
+// Проверка имени:
+pm.test("CheckName", function () {
+  pm.expect(resp.name).to.eql(req.name)
+})
+[14:12]
+// Cоздаём с помощью команды переменную в окружение (напр., name):
+pm.environment.set("name", resp.name)
+
+
+
+
+
+var resp = pm.response.json();
+var req_get = pm.reqwest.url.query.toObject()
+var resp = pm.response.json();
+var req = request.data;
+
+
+
+
